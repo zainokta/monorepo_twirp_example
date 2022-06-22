@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package zainokta.example.service2;
+option go_package = "service2/rpc/servicetwo";
+
+service ServiceTwo {
+  rpc MakeShoe(Size) returns (Shoe);
+}
+
+message Size {
+  int32 inches = 1; // must be > 0
+}
+
+message Shoe {
+  int32 inches = 1;
+  string color = 2; // anything but "invisible"
+  string name = 3; // i.e. "bowler"
+}
